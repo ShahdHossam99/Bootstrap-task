@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <title>Bootstrap</title>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-transparent position-fixed top-0 start-0 w-100">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#">Brainwave.io</a>
+      <button class="navbar-toggler border-0 bg-white" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Demos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Pages</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Support</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="Hero vh-100 d-flex justify-content-center align-items-center text-white">
+    <img src="./assets/background img.png" 
+    class="position-absolute top-0 start-0 w-100 h-100 opacity-50 object-fit-cover" alt="overlay image">
+    <div class="text-center position-relative">
+      <p class="text-uppercase small text-success">Shared space in your town</p>
+      <h1 class="fw-bold mb-4">
+        <span class="d-block">Rent desk space in a</span>
+        <span class="d-bloc">shared office environment</span>
+      </h1>
+
+      <!-- Form -->
+      <div class="container">
+        <form class="row g-2 align-items-center justify-content-center bg-white rounded-3 shadow-sm p-3 h-80px flex-wrap">
+        
+        <!-- Location Select with Icon -->
+        <div class="dropdown col-auto position-relative">
+        <i class="bi bi-geo-alt-fill text-dark position-absolute top-50 start-0 translate-middle-y ms-2"></i>
+        <button id="locationBtn" class="btn dropdown-toggle text-dark ps-4 bg-white border border-light-subtle border-1"
+        type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Select location
+        </button>
+        <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" onclick="setLocation('Assiut')">Assiut</a></li>
+        <li><a class="dropdown-item" href="#" onclick="setLocation('Alex')">Alex</a></li>
+        <li><a class="dropdown-item" href="#" onclick="setLocation('Egypt')">Egypt</a></li>
+        </ul>
+        </div>
+        <script>
+          function setLocation(city) {
+          document.getElementById('locationBtn').innerText = city;
+          }
+        </script>
+  
+          <!-- Date -->
+          <div class="dropdown col-auto position-relative">
+          <i class="bi bi-calendar4 text-dark position-absolute top-50 start-0 translate-middle-y ms-2"></i>
+          <button id="dateBtn" 
+          class="btn dropdown-toggle text-dark ps-4 bg-white border border-light-subtle border-1" 
+          type="button" onclick="document.getElementById('realDate').showPicker()">
+          Select Date
+          </button>
+          <!-- input مخفي للتاريخ -->
+          <input type="date" id="realDate" class="d-none" 
+          onchange="document.getElementById('dateBtn').innerText = this.value">
+          </div>
+
+          <!-- Button -->
+          <div class="col-auto">
+            <button class="btn-form fw-bold text-white bg-primary border-0 rounded-2">
+              Search Place
+            </button>
+          </div>
+        </form>
+        <!-- Video -->
+      <div class="d-flex align-items-center justify-content-center mt-4">
+      <i class="bi bi-play-circle text-white fs-7 me-2"></i>
+      <span class="text-white">Take virtual tour of our spaces</span>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!--fact section-->
+  <section class="d-flex justify-content-center align-items-center gap-5 py-3">
+    <div class="fact1 m-5">
+      <p class="fs-2 fw-bold d-flex justify-content-center">06</p>
+      <span class="d-block text-muted small">Offices are available on</span>
+      <span class="d-block text-muted small d-flex justify-content-center">different countries</span>
+    </div>
+    <div class="fact2 m-5">
+      <p class="fs-2 fw-bold d-flex justify-content-center">238</p>
+      <span class="d-block text-muted small">Seats are available right now</span>
+      <span class="d-block text-muted small d-flex justify-content-center">with dedicated support</span>
+    </div>
+    <div class="fact3 m-5">
+      <p class="fs-2 fw-bold d-flex justify-content-center">1.395</p>
+      <span class="d-block text-muted small">People are using our co-work</span>
+      <span class="d-block text-muted small d-flex justify-content-center">spaces right now</span>
+    </div>
+  </section>
+  <hr class="border border-secondary border-1 opacity-40 w-100">
+
+  <!--location section-->
+  <section class="d-flex justify-content-center align-items-center py-5">
+    <div class="title">
+    <h1 class="fs-2 fw-bold d-flex justify-content-center">Popular locations</h1>
+    <span class="d-block text-muted small pt-2 d-flex justify-content-center">With lots of unique blocks, you can easily build a page</span>
+    <span class="d-block text-muted small d-flex justify-content-center">easily without any coding.</span>
+    <div class="cards d-flex row gap-3 py-5">
+      <div class="card mt-3 border-0">
+      <div class="position-relative d-inline-block w-100">
+      <img src="./assets/card img1.png" class="card1-img1 rounded-3" alt="...">
+      <img src="./assets/card1 shadow.png" class="card1-img2 position-absolute start-50 translate-middle-x rounded-3">
+      </div>
+      <div class="card-body text-center">
+      <span class="card-title d-block fw-bold">Beauview</span>
+      <span class="card-text text-muted small d-block">37 seats</span>
+      </div>
+      </div>
+      <div class="card border-0">
+      <img src="./assets/card img2.png" class="card-img-top rounded-3" alt="...">
+      <div class="card-body text-center">
+      <span class="card-title d-block fw-bold">Haleyborough</span>
+      <span class="card-text text-muted small d-block">12 seats</span>
+      </div>
+      </div>
+      <div class="card border-0">
+      <img src="./assets/card img3.png" class="card-img-top rounded-3" alt="...">
+      <div class="card-body text-center">
+      <span class="card-title d-block fw-bold">Jeromyshire</span>
+      <span class="card-text text-muted small d-block">28 seats</span>
+      </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!--content1 section-->
+  <section class="d-flex justify-content-center align-items-start py-4 bg-light position-relative">
+  <div class="title" style="padding-right: 80px;">
+    <span class="d-block fs-3 fw-bold d-flex">Work around very</span>
+    <span class="d-block fs-3 fw-bold d-flex">talented people.</span>
+    <span class="d-block text-muted small pt-2">With lots of unique blocks, you can easily build a page</span>
+    <span class="d-block text-muted small">easily without any coding.</span>
+    <img src="./assets/contant1 img1.png" 
+        class="card w-50 mt-5 rounded-3" style="margin-bottom: -90px;">
+  </div>
+  <img src="./assets/contant1 img2.png" class="rounded-3" style="width: 300px;">
+</section>
+
+<!--features section-->
+<section class="d-flex justify-content-center align-items-start gap-5" style="margin-top: 80px;">
+  <div class="d-flex align-items-start gap-3 m-4">
+    <i class="bi bi-window-sidebar fs-3"></i>
+    <div>
+      <p class="fs-5 fw-bold mb-1">Dedicated Desk</p>
+      <span class="d-block text-muted small">With lots of unique blocks, you can</span>
+      <span class="d-block text-muted small">easily build a page without coding</span>
+      <span class="d-block text-muted small">Build your next landing page.</span>
+    </div>
+  </div>
+  <div class="d-flex align-items-start gap-3 m-4">
+    <i class="bi bi-wifi fs-3"></i>
+    <div>
+      <p class="fs-5 fw-bold mb-1">High Speed Internet</p>
+      <span class="d-block text-muted small">With lots of unique blocks, you can</span>
+      <span class="d-block text-muted small">easily build a page without coding</span>
+      <span class="d-block text-muted small">Build your next landing page.</span>
+    </div>
+  </div>
+  <div class="d-flex align-items-start gap-3 m-4">
+    <i class="bi bi-cup-hot fs-3"></i>
+    <div>
+      <p class="fs-5 fw-bold mb-1">Unlimited Coffee</p>
+      <span class="d-block text-muted small">With lots of unique blocks, you can</span>
+      <span class="d-block text-muted small">easily build a page without coding</span>
+      <span class="d-block text-muted small">Build your next landing page.</span>
+    </div>
+  </div>
+</section>
+
+<!--content2 section-->
+<section class="content2 d-flex align-items-center py-5 mt-5">
+  <div class="container d-flex flex-column">
+    <div class="title text-start pt-5" style="max-width: 600px; padding-left: 80px;">
+      <span class="d-block fs-2 fw-bold text-white">We are always here</span>
+      <span class="d-block fs-2 fw-bold text-white">for your backup.</span>
+      <span class="d-block text-muted small pt-2">We share common trends and strategies for</span>
+      <span class="d-block text-muted small">creating & improving your rental income.</span>
+    </div>
+    <div class="d-flex flex-column gap-3 mt-4 ps-5" style="margin-left: 30px;">
+      <div class="d-flex align-items-start gap-3">
+        <i class="bi bi-check-circle-fill text-success fs-5"></i>
+        <div>
+          <p class="fs-5 fw-bold mb-1 text-white">Noise Free Locations</p>
+          <span class="d-block text-muted small">With lots of unique blocks, you can easily</span>
+          <span class="d-block text-muted small">build a page without coding.</span>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-start gap-3">
+        <i class="bi bi-check-circle-fill text-success fs-5"></i>
+        <div>
+          <p class="fs-5 fw-bold mb-1 text-white">24/7 Hour Support</p>
+          <span class="d-block text-muted small">With lots of unique blocks, you can easily</span>
+          <span class="d-block text-muted small">build a page without coding.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5 mt-5 pe-md-5 ">
+  <div class="bg-white shadow rounded p-3 border-top border-3 border-success">
+    <div class="accordion" id="faqAccordion">
+      
+      <!-- Item 1 -->
+      <div class="accordion-item bg-white border-start-0 border-end-0 border-top-0">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button bg-white text-dark shadow-none fw-bold" type="button" data-bs-toggle="collapse" 
+                  data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            How to setup Shade Pro?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted small d-block">
+            With lots of unique blocks, you can easily build a page with coding. 
+            Build your next landing page. Integer ut obe ryn. 
+            <span class="d-block">Sed feugiat vitae turpis a porta.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="accordion-item border-start-0 border-end-0">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button bg-white text-dark shadow-none collapsed fw-bold" type="button" data-bs-toggle="collapse" 
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Can I use Shade Pro for my clients?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted small">
+            Yes, you can use Shade Pro for your clients as per the license agreement.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="accordion-item border-start-0 border-end-0">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button bg-white text-dark shadow-none collapsed fw-bold" type="button" data-bs-toggle="collapse" 
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            How often do you release update?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted small">
+            We release updates regularly to improve performance and add features.
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="accordion-item border-start-0 border-end-0 border-bottom-0">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button bg-white text-dark shadow-none collapsed fw-bold" type="button" data-bs-toggle="collapse" 
+                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            How can I access to old version?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted small">
+            You can access older versions through your account download page.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!--Subscribe section-->
+<section class="d-flex justify-content-center align-items-center gap-5 py-3">
+  <div>
+    <div class="fact1 m-5">
+      <h2 class="fs-2 fw-bold d-flex justify-content-center">Get latest updates</h2>
+      <span class="d-block text-secondary">With lots of unique blocks, you can easily build a page</span>
+      <span class="d-block text-secondary d-flex justify-content-center">without coding. Build your next landing page.</span>
+    </div>
+    <form class="text-center">
+  <div class="mb-3">
+    <input type="email" class="form-control mx-auto w-50 d-block" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+  </div>
+  <button type="submit" class="btn btn-primary text-center mx-auto w-50 d-block">Subscribe</button>
+</form>
+<span class="d-block text-muted small pt-4 text-center">We'll never share your details with third parties.</span>
+<span class="d-block text-muted small text-center">View our privacy policy for more imfo.</span>
+</div>
+</section>
+<hr class="border border-secondary border-1 opacity-40 w-100 mt-5">
+
+<!--Footer section-->
+  <footer class="text-light py-4 mt-5">
+  <div class="container">
+    <div class="row ms-5">
+      
+      <div class="col-md-2 mb-3">
+        <span class="d-block mb-2 text-muted small mb-4">Company</span>
+        <span class="d-block text-dark small mb-2">About us</span>
+        <span class="d-block text-dark small mb-2">Contact us</span>
+        <span class="d-block text-dark small mb-2">Careers</span>
+        <span class="d-block text-dark small mb-2">Press</span>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <span class="d-block mb-2 text-muted small mb-4">Product</span>
+        <span class="d-block text-dark small mb-2">Features</span>
+        <span class="d-block text-dark small mb-2">Pricing</span>
+        <span class="d-block text-dark small mb-2">News</span>
+        <span class="d-block text-dark small mb-2">Help desk</span>
+        <span class="d-block text-dark small mb-2">Support</span>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <span class="d-block mb-2 text-muted small mb-4">Services</span>
+        <span class="d-block text-dark small mb-2">Digital Marketing</span>
+        <span class="d-block text-dark small mb-2">Content Writing</span>
+        <span class="d-block text-dark small mb-2">SEO for Business</span>
+        <span class="d-block text-dark small mb-2">UI Design</span>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <span class="d-block mb-2 text-muted small mb-4">Legal</span>
+        <span class="d-block text-dark small mb-2">Privacy</span>
+        <span class="d-block text-dark small mb-2">Teams & Conditions</span>
+        <span class="d-block text-dark small mb-2">Return Policy</span>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <span class="d-block mb-2 text-muted small">Contact us</span>
+        <span class="d-block small"><a href="#" class="text-decoration-none">support at@brainwave.io</a></span>
+        <span class="d-block small"><a href="#" class="text-decoration-none">+133-394-3439-1435</a></span>
+      </div>
+    </div>
+
+    <hr class="border-secondary">
+
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="text-dark small">
+        &copy; 2024 Copyright, All Rights Reserved, Made by Seju_ui_ux with 💚
+      </div>
+      <div class="d-flex gap-3">
+        <a href="#"><i class="bi bi-facebook fs-5 text-primary"></i></a>
+        <a href="#" class="text-secondary small"><i class="bi bi-twitter fs-5"></i></a>
+        <a href="#" class="text-secondary"><i class="bi bi-instagram fs-5"></i></a>
+        <a href="#" class="text-secondary"><i class="bi bi-linkedin fs-5"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
